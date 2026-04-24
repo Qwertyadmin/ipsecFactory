@@ -35,7 +35,7 @@ Based on [OpenWrt documentation](https://openwrt.org/docs/guide-user/services/vp
 - First installation: install packages, configure server, generate CA and server certificates and one client certificate.
 
 ```bash
-.\ipsecFactory.sh --server vpn.yourdomain.com --client yourClient \
+./ipsecFactory.sh --server vpn.yourdomain.com --clients yourClient \
  --dhcp 192.168.1.1 --capassword yourCAPassword --clientpassword yourClientPassword \
  --country CH --caname yourCA --orgname yourOrganization
 ```
@@ -43,6 +43,6 @@ Based on [OpenWrt documentation](https://openwrt.org/docs/guide-user/services/vp
 - Client certificate generate other client certificates using previously created CA. Require CA keys bundle inside script directory.
 
 ```bash
-.\ipsecFactory.sh --certonly --client 'aClient anotherClient oneMoreClient' \
+./ipsecFactory.sh --certonly --clients 'aClient anotherClient oneMoreClient' \
  --capassword yourCAPassword --clientpassword yourClientPassword
 ```
